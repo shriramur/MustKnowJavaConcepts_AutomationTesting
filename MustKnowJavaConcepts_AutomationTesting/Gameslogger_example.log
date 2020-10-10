@@ -1,0 +1,4 @@
+2020-10-11 01:34:19  INFO Logger_PropertyFileConfigurator:14 - This is info message
+2020-10-11 01:34:19  WARN Logger_PropertyFileConfigurator:15 - This is warn message
+2020-10-11 01:34:19 ERROR Logger_PropertyFileConfigurator:16 - This is error message
+2020-10-11 01:34:19 FATAL Logger_PropertyFileConfigurator:17 - This is fatal message

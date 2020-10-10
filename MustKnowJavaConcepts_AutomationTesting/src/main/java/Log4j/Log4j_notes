@@ -1,0 +1,55 @@
+Properties file content reference: https://bit.ly/2sYyGZu
+
+Conversion pattern explanation: https://bit.ly/2HmemK3
+
+XML file content reference: https://bit.ly/2FBJMKM
+
+What will we learn in this video:
+---------------------------------------------------
+1. What is logging?
+2. Why do we need a logger?
+3. How can we achieve logging in Java?
+4. Log4j Components
+5. Priority Levels
+6. Different ways to configure log4j
+
+1. What is logging?
+Logging is the process of writing log messages during the execution of a program to a central place.
+
+2. Why do we need Logs?
+If we use SOP (System.out.print()) statements to print log messages We can print log messages on the console only.  So, when the console is closed, we will lose all of those logs.
+
+3. Log4j Components
+a)Logger - it is a class inside log4j package
+	We have to initialize objects for each of java class.
+	We have logger methods to indicated each logging levels
+	Logger class methods: debug, info, warn, error, fatal
+b)Appender - To write messages to DB, File or SMTP. It defines where we need to store the log messages.
+	Several types are there, Few are:
+	1) JDBC appender
+	2) File Appender
+	3) Console Appender
+c)Layout - To define the formatting in which the log files will print into a repository.
+	1) Pattern Layout
+	2) Simple Layout
+	3) XML Layout
+
+4. Log4j priority levels:
+debug<  info< warn<  error< fatal
+
+5. Different ways to configure log4j:
+a) Basic configurator - It is suitable for tutorials and temporary purpose, This should not be used in industry as it behaves ife syso, Just print logs in console.
+b) Property File Configurator - We should configure our rootlogger, appender, layout details in a property file
+c) XML configurator (DOMConfigurator)
+
+================================Example of properties logger================================
+#RootLogger = Here we are specifying "INFO" and above level messages should be written in a "file". Starting level here is info and it will print info and above level messages
+log4j.rootLogger = INFO, file
+#Appender = Configuration in format of log messages to print in file. Here we give which file, max size, Max backup index
+log4j.appender.file = org.apache.log4j.RollingFileAppender - 'Here we define the RollingFileAppender which is used to write files into a existing log file, It will append the contents'
+log4j.appender.file.File = C:\\Games\\logger_example.log - 'Location of log file'
+log4j.appender.file.MaxFileSize = 12MB - 'Max file size of log file'
+log4j.appender.file.MaxBackupIndex = 10 - 'It indicates if max sixe is reached then how many backup files should be created to store log messages'
+#Layout
+log4j.appender.file.layout = org.apache.log4j.PatternLayout - 'Which pattern should our log files look like will be given here'
+log4j.appender.file.layout.ConversionPattern = %d{yyyy-MM-dd HH:mm:ss} %5p %c{1}:%L - %m%n = 'Pattern format'
