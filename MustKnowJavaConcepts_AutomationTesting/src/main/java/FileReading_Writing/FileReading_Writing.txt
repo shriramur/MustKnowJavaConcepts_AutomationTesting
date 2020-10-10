@@ -4,3 +4,8 @@ How to write a file in java
 2. BufferedReader = Easiest way, Performance wise better and widely used
 3. FileOutputStream = For writing raw byte array information(Eg - Images). With some special charecters etc, Eithout encoding the charecters
 4. Path = This is also used to write byte arrays
+
+=====================================
+How to read file in java
+1. BufferedReader = It is the best way to read the file. Simple and widely used
+	Note - Readline only reads only one line from file(Until /n is encountered), To over come this we need to use looping. Wile(w.readline()!=null)
