@@ -1,0 +1,6 @@
+How to write a file in java
+
+1. File Writer = Straight forward, Direct interactions with files, Less Performance
+2. BufferedReader = Easiest way, Performance wise better and widely used
+3. FileOutputStream = For writing raw byte array information(Eg - Images). With some special charecters etc, Eithout encoding the charecters
+4. Path = This is also used to write byte arrays
